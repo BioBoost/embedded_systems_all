@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Virtual Machine - Embedded Systems</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../css/extra.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Virtual Machine";
+    var mkdocs_page_input_path = "virtual_machine.md";
+    var mkdocs_page_url = "/virtual_machine/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Embedded Systems</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../operating_systems/">Operating Systems</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Virtual Machine</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#running-a-virtual-development-machine">Running a Virtual Development Machine</a></li>
+                
+                    <li><a class="toctree-l4" href="#installing-virtual-box">Installing Virtual Box</a></li>
+                
+                    <li><a class="toctree-l4" href="#creating-a-virtual-machine">Creating a Virtual Machine</a></li>
+                
+                    <li><a class="toctree-l4" href="#configuring-the-virtual-machine">Configuring the Virtual Machine</a></li>
+                
+                    <li><a class="toctree-l4" href="#installing-an-operating-system-on-the-virtual-machine">Installing an Operating System on the Virtual Machine</a></li>
+                
+                    <li><a class="toctree-l4" href="#installing-guest-additions">Installing Guest Additions</a></li>
+                
+                    <li><a class="toctree-l4" href="#creating-a-shared-folder">Creating a shared folder</a></li>
+                
+                    <li><a class="toctree-l4" href="#backups-and-snapshots">Backups and snapshots</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Embedded Systems</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Virtual Machine</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="running-a-virtual-development-machine">Running a Virtual Development Machine</h1>
+<p>A virtual machine (VM) is an emulation of a particular computer system. This system can be based on an existing or hypothetical machine. As a user we can create such virtual machines and install an operating system of choice on them. This allows us to run a Linux distribution while working on a Windows machine and vice versa.</p>
+<p>Several software packages are available to create and run virtual machines. Examples are VMware,  Hyper-V  which comes with Windows 8,  Oracle VirtualBox,  &hellip; For our labs we will be using VirtualBox as this is free,  lightweight,  easy to use and available for Windows,  Linux,  Mac and Solaris.</p>
+<div class="admonition note">
+<p class="admonition-title">Hyper-V</p>
+<p>Hyper-V,  codenamed Viridian and formerly known as Windows Server Virtualization,  is a native hypervisor; it can create virtual machines on x86-64 systems. Starting with Windows 8,  Hyper-V supersedes Windows Virtual PC as the hardware virtualization component of the client editions of Windows NT.</p>
+</div>
+<h2 id="installing-virtual-box">Installing Virtual Box</h2>
+<p>Start by going to the download section of the website of VirtualBox (<a href="https://www.virtualbox.org">https://www.virtualbox.org</a>). Download the VirtualBox platform package for your system. At the moment of this writing the current version of VirtualBox is 5.0.20. When running the installer package make sure to install VirtualBox with all features enabled as shown in the figure below.</p>
+<figure><img alt="Installing VirtualBox with all features enabled" src="../img/virtual_box_install.png" /><figcaption>
+<p>Installing VirtualBox with all features enabled</p>
+</figcaption>
+</figure>
+<p>Next we also need to install the extension pack which introduces USB2.0 and USB3.0 support and some other extra features. You can download the extension pack on the same page as you downloaded the installer for VirtualBox. Just make sure to pick the correct version for your current VirtualBox version.</p>
+<p>The installer of VirtualBox should also have created a virtual network adapter (such as can be seen in the figure below) which is used for private networking between the host machine and the virtual machine.</p>
+<figure><img alt="VirtualBox virtual network adapters" src="../img/virtual_box_network_adapters.png" /><figcaption>
+<p>VirtualBox virtual network adapters</p>
+</figcaption>
+</figure>
+<p>Once you’re finished you can start the VirtualBox client and you should get the interface presented in the figure below:</p>
+<figure><img alt="Launching VirtualBox after installation" src="../img/virtual_box_clean_install.png" /><figcaption>
+<p>Launching VirtualBox after installation</p>
+</figcaption>
+</figure>
+<p>Under <code>Files =&gt; Preferences =&gt; General</code> you can change the default path for your virtual machines. Do take note that you will need about 25GB of free space for each VM. For these labs you will most likely only need 1 VM.</p>
+<p>Under <code>Files =&gt; Preferences =&gt; Language</code> you can also change the default interface language if you wish.</p>
+<h2 id="creating-a-virtual-machine">Creating a Virtual Machine</h2>
+<p>Creating a virtual machine is very simple as it just following the steps presented to you by the wizard. To start the process of creating a VM hit the New button on the main interface of VirtualBox.</p>
+<p>The first step consist of giving your VM a name and selecting the operating system you will be running on the VM as shown in the figure below. In our case we will use Linux Mint 17.3 (Rosa) - Cinnamon (64-bit). More on this later.</p>
+<figure><img alt="Creating a VM - The name and OS" src="../img/vm_new.png" /><figcaption>
+<p>Creating a VM - The name and OS</p>
+</figcaption>
+</figure>
+<p>Next we need to select the amount of memory we want to assign to the virtual machine. The recommended amount is 512MB. However if you have more than 4GB,  select 1024MB or even 2048MB,  which will improve the responsiveness and performance of the VM.</p>
+<figure><img alt="Creating a VM - Amount of memory" src="../img/vm_memory.png" /><figcaption>
+<p>Creating a VM - Amount of memory</p>
+</figcaption>
+</figure>
+<p>Next we need to choose what if we want to create a new or use an existing virtual hard drive. Pick the option to create one now as depicted in the figure below. This will launch another wizard which will lead us through the creation process of a virtual drive.</p>
+<figure><img alt="Creating a VM - Virtual hard drive" src="../img/vm_hdd.png" /><figcaption>
+<p>Creating a VM - Virtual hard drive</p>
+</figcaption>
+</figure>
+<p>The first screen will allow us to select what type of virtual drive file we want to create. Just leave the default option (VDI – Virtual Disk Image).</p>
+<figure><img alt="Creating a VM - Hard drive file type" src="../img/vm_vdi.png" /><figcaption>
+<p>Creating a VM - Hard drive file type</p>
+</figcaption>
+</figure>
+<p>In the next step we get the option to create a dynamically allocated image or a fixed size image as can be seen in the figure below. A fixed size image is faster but will take up the full space we select for the size of the virtual drive. A dynamically allocated image is slower but will only grow in size when needed. You will need to decide this for yourself based on the free space available on your host system.</p>
+<figure><img alt="Creating a VM - Virtual drive allocation method" src="../img/vm_dynamic.png" /><figcaption>
+<p>Creating a VM - Virtual drive allocation method</p>
+</figcaption>
+</figure>
+<p>Now we need to select the hard drive file location (leave it as is) and size of the drive. Make sure to select <strong>at least 25GB for the size</strong> as shown in the figure below. Hitting create will finish the process of creating a VM.</p>
+<figure><img alt="Creating a VM - Location and size of the virtual drive" src="../img/vm_size.png" /><figcaption>
+<p>Creating a VM - Location and size of the virtual drive</p>
+</figcaption>
+</figure>
+<p>Your new VM should now appear in the list of VM&rsquo;s on the left side of the VirtualBox main interface. Selecting a VM in the list also displays some basic information about the VM.</p>
+<figure><img alt="A new VM is added to your current list of VM's" src="../img/vm_created.png" /><figcaption>
+<p>A new VM is added to your current list of VM&rsquo;s</p>
+</figcaption>
+</figure>
+<h2 id="configuring-the-virtual-machine">Configuring the Virtual Machine</h2>
+<p>Before installing an operating system on the newly created VM it is necessary to make a few configuration changes. Select the new VM and hit the <em>Settings</em> button on the main interface. You will be presented with the configuration settings of your VM.</p>
+<p>Start by going to <code>General =&gt; Advanced</code> and enabling the <em>bidirectional shared clipboard</em>. This allows text to be copied to the clipboard in the VM and pasted in your host OS and vice versa. Also enable <em>bidirectional Drag&rsquo;n Drop</em>. The resulting configuration is shown in the figure below.</p>
+<figure><img alt="Configure VM to allow bidirectional clipboard and drag'n drop" src="../img/vm_config_clipboard.png" /><figcaption>
+<p>Configure VM to allow bidirectional clipboard and drag&rsquo;n drop</p>
+</figcaption>
+</figure>
+<p>Default the VM is configured with a single network adapter with NAT (Network Address Translation) enabled (Network tab). This means that the VM has access to the network and also has access to the Internet. However because of NAT we will not be able to connect to the VM from another machine using SSH without configuring port forwarding. Since later on in the LAB&rsquo;s we will need to do just that it is more convenient to change the network settings to a <em>Bridged Adapter</em> as shown in the figure below. Make sure to the select your physical Ethernet adapter to bridge with and not your wireless interface.</p>
+<figure><img alt="Configure VM to bridge the virtual and physical adapters" src="../img/vm_config_bridged.png" /><figcaption>
+<p>Configure VM to bridge the virtual and physical adapters</p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Bridged Adapter</p>
+<p>This will basically create a network bridge between the VM&rsquo;s network adapter and your physical host adapter making your VM&rsquo;s directly available on your network. This may be a security issue but can also simplify working with your VM. This option also implies that your VM will get its IP address from the same DHCP (Dynamic Host Configuration Protocol) server as your host machine if you have a DHCP enabled network.</p>
+</div>
+<h2 id="installing-an-operating-system-on-the-virtual-machine">Installing an Operating System on the Virtual Machine</h2>
+<p>Before we can install an operating system on our virtual machine,  it is necessary to download an installation image for the Linux distribution we will be using. This image can then be mounted on our VM allowing us to boot from it. In our case we will use Linux Mint 17.3 (Rosa) - Cinnamon (64-bit),  which can be downloaded from <a href="https://www.linuxmint.com/download.php">https://www.linuxmint.com/download.php</a>. Make sure to select the 64-bit Desktop edition. Linux Mint is derivative of Ubuntu,  but with a less intrusive graphical desktop environment.</p>
+<p>Once downloaded start VirtualBox and open the setting of your VM. Next open the storage settings. Now select the virtual CD/DVD drive below the IDE controller as shown in step 1 in the figure below:</p>
+<figure><img alt="Steps for mounting an image in VirtualBox" src="../img/vm_mount_iso.png" /><figcaption>
+<p>Steps for mounting an image in VirtualBox</p>
+</figcaption>
+</figure>
+<p>Hit the small CD/DVD icon next to the IDE Secondary Master dropdown (step 2 in the figure above) and select <strong>Choose a virtual CD/DVD disk file &hellip;</strong> A browse window will open; select the image file you downloaded from the Linux Mint website and hit OK. Hit the OK button of the setting panel to close it.</p>
+<p>Ready ? Then hit the start button of the VM and follow the steps for installing the Linux Mint operating system. If you see the automatic boot screen shown below do nothing an let it pass. Linux Mint will boot in Live mode and allow you to start the install process from that point on.</p>
+<figure><img alt="Live DVD or boot menu option" src="../img/mint_first_boot.png" /><figcaption>
+<p>Live DVD or boot menu option</p>
+</figcaption>
+</figure>
+<p>To start the installation process just double click the &lsquo;Install Linux Mint&rsquo; icon on the desktop.</p>
+<figure><img alt="Starting the installation process" src="../img/mint_start_install.png" /><figcaption>
+<p>Starting the installation process</p>
+</figcaption>
+</figure>
+<p>From this point on all steps are self-explanatory. Most of the installation steps can be kept to their default values.</p>
+<p>If you click inside the VM window your mouse cursor will automatically be captured. Releasing your cursor can be achieved using the right CTRL key.</p>
+<p>Once the installation procedure is finished you will be asked to reboot the VM.</p>
+<h2 id="installing-guest-additions">Installing Guest Additions</h2>
+<p>You may or may not have noticed that your mouse movement is a bit sluggish within the VM. That is because the guest additions haven not been installed yet.</p>
+<p>Open the Devices menu which can be found at the top of the VM window. Next select <strong>Insert Guest Additions CD image &hellip;</strong> as shown in the figure below. A window in Linux will open asking if you&rsquo;d wish to run the package. Hit run and follow the instructions.</p>
+<figure><img alt="Inserting the Guest Additions for Linux Mint" src="../img/mint_guest_additions.png" /><figcaption>
+<p>Inserting the Guest Additions for Linux Mint</p>
+</figcaption>
+</figure>
+<p>Once finished remove the image from the virtual drive (by right clicking the icon on the Desktop of Linux Mint and choosing Eject). Restart the virtual machine.</p>
+<div class="admonition warning">
+<p class="admonition-title">Updates</p>
+<p>If you update your machine it is necessary to repeat this procedure.</p>
+</div>
+<p>You should now be able to resize the guest window. Or you can switch to fullscreen by hitting <code>RCTRL-F</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Software Rendering Mode</p>
+<p>If you get a popup after login saying that Linux Mint is running in software rendering mode,  it can be fixed by going to <code>Settings =&gt; Display =&gt; Screen</code> and enabling <strong>3D Acceleration</strong> of your virtual machine. Make sure to restart the VM.</p>
+</div>
+<h2 id="creating-a-shared-folder">Creating a shared folder</h2>
+<p>Some files can be dragged and dropped between your host machine and the VM. However this does not seem to be possible for all file types. For these instances it is more easy to create a shared directory which can be accessed from your host and the VM.</p>
+<p>Navigate to <code>Settings =&gt; Shared Folders</code> of your virtual machine as depicted in the figure below:</p>
+<figure><img alt="Shared folders settings of VM" src="../img/mint_settings_shared_folder.png" /><figcaption>
+<p>Shared folders settings of VM</p>
+</figcaption>
+</figure>
+<p>Create a shared folder on your system and make sure to select the <strong>Auto-mount</strong> option as shown in the figure below.</p>
+<figure><img alt="Creating a shared folder for your VM" src="../img/mint_shared_folder.png" /><figcaption>
+<p>Creating a shared folder for your VM</p>
+</figcaption>
+</figure>
+<p>The folder should now be automatically mounted under /media in your VM on your next reboot and should also be available on the Desktop of Linux Mint. However if you try to open the folder you will get a permission error. To fix this it is ncessary to add your used to the group <code>vboxsf</code>. You can achieve this by opening up a terminal (<code>CTRL-ALT-T</code>) and entering the command below. More on this later.</p>
+<pre><code class="shell">$ sudo usermod -a -G vboxsf &lt;your_account_name&gt;
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Command Line instructions</p>
+<p>Note how the commands in this course are all proceeded by the dollar sign ($). This is the symbol that indicates the end of the prompt and should not be typed. Different distributions or shells may show different symbols for this.</p>
+</div>
+<p>Next logout from the current session and log back in. Open up a new terminal and enter the <code>id</code> command to get a list of all the groups your user belongs to. <code>111(vboxsf)</code> should be one of them.</p>
+<pre><code class="shell">$ id
+uid=1000(bioboost) gid=1000(bioboost) groups=1000(bioboost), 4(adm), 24(cdrom), 27(sudo), 30(dip), 46(plugdev), 107(lpadmin), 110(sambashare), 111(vboxsf)
+</code></pre>
+
+<h2 id="backups-and-snapshots">Backups and snapshots</h2>
+<p>It is always a good idea to backup your project files. You can now easily copy them to shared folder and put them on OneDrive, DropBox or a USB stick.</p>
+<p>Another good idea is to create periodical snapshots of your virtual machine. This snapshot will contain all the delta&rsquo;s compared to the previous state of the VM. Just select the VM you want to create a snapshot of and hit the <strong>Snapshots</strong> button in the top right corner of VirtualBox. Next click the left icon to create a snapshot. Fill in the name and description as shown in the figure below.</p>
+<figure><img alt="Creating a VM snapshot" src="../img/vm_snapshot.png" /><figcaption>
+<p>Creating a VM snapshot</p>
+</figcaption>
+</figure>
+<p>Adding a decent description will save you the misery of having the search through the snapshots for the correct state if your VM should fail.</p>
+<p>You could even do this after every LAB session.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../operating_systems/" class="btn btn-neutral" title="Operating Systems"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../operating_systems/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
